@@ -1,0 +1,54 @@
+Here's the complete working setup:
+
+**1. Create `docker-compose.yml`:**
+```yaml
+services:
+  db:
+    image: killbill/mariadb:0.24
+    environment:
+      - MYSQL_ROOT_PASSWORD=killbill
+    ports:
+      - "3306:3306"
+
+  killbill:
+    image: killbill/killbill:0.24.10
+    ports:
+      - "8080:8080"
+    environment:
+      - KILLBILL_DAO_URL=jdbc:mysql://db:3306/killbill
+      - KILLBILL_DAO_USER=killbill
+      - KILLBILL_DAO_PASSWORD=killbill
+
+  kaui:
+    image: killbill/kaui:3.0.10
+    ports:
+      - "9090:8080"
+    environment:
+      - KAUI_CONFIG_DAO_URL=jdbc:mysql://db:3306/kaui
+      - KAUI_CONFIG_DAO_USER=killbill
+      - KAUI_CONFIG_DAO_PASSWORD=killbill
+      - KAUI_KILLBILL_URL=http://killbill:8080
+```
+
+**2. Start it:**
+```bash
+docker compose up
+```
+
+**3. Fix the database permissions (one-time only):**
+```bash
+docker compose exec db mariadb -u root -pkillbill -e "GRANT ALL PRIVILEGES ON *.* TO 'killbill'@'%' IDENTIFIED BY 'killbill'; FLUSH PRIVILEGES;"
+```
+
+**4. Restart after the grant:**
+```bash
+docker compose restart killbill kaui
+```
+
+**5. Access:**
+- Admin UI (KAUI): `http://localhost:9090` → login `admin` / `password`
+- API: `http://localhost:8080`
+
+**Notes:**
+- Don't use `killbill/killbill:latest` — it has a KPM bug on ARM (aarch64). Stick with `0.24.10`.
+- The permissions fix is needed because the `killbill` DB user is initially restricted to `localhost` only.

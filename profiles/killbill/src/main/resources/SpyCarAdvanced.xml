@@ -163,7 +163,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -208,7 +208,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -253,7 +253,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -298,7 +298,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -343,7 +343,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -388,7 +388,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -464,7 +464,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
@@ -540,7 +540,7 @@
                 <phase type="TRIAL">
                     <duration>
                         <unit>DAYS</unit>
-                        <number>30</number>
+                        <number>14</number>
                     </duration>
                     <fixed>
                         <fixedPrice> <!-- empty price implies $0 -->
